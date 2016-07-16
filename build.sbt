@@ -6,7 +6,7 @@ lazy val root = (project in file(".")).
   )
 
 lazy val printBaseDirectory: TaskKey[Unit] = TaskKey[Unit]("printBaseDirectory", "Print baseDirectory for the project", KeyRanks.ATask)
-printBaseDirectory <<= streams map Tasks.printBaseDirectory
+printBaseDirectory <<= (streams, baseDirectory) map Tasks.printBaseDirectory
 
 
 

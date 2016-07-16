@@ -2,7 +2,7 @@ import sbt.Keys.TaskStreams
 import sbt._
 
 object Tasks {
-  def printBaseDirectory(streams: TaskStreams): Unit = {
-    streams.log.info("Here I want to print the value of baseDirectory")
+  def printBaseDirectory(streams: TaskStreams, dir: File): Unit = {
+    streams.log.info("This is the value of baseDirectory: " + dir.getAbsolutePath)
   }
 }
